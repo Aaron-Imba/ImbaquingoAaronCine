@@ -1,6 +1,6 @@
 # App de Gestión de Cine (.NET MAUI)
 
-¡Hola! Este repositorio contiene una aplicación móvil nativa desarrollada con **.NET MAUI**. El objetivo de este proyecto fue construir un sistema práctico y rápido para administrar una cartelera de cine y sus ventas, guardando todo de forma local usando **SQLite** y **Dapper**.
+Este repositorio contiene una aplicación móvil nativa desarrollada con **.NET MAUI**. El objetivo de este proyecto fue construir un sistema práctico y rápido para administrar una cartelera de cine y sus ventas, guardando todo de forma local usando **SQLite** y **Dapper**.
 
 ## ¿Qué se logró en este proyecto?
 
