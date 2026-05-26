@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../Entidades/Entidades.csproj" />
+  <Project Path="ImbaquingoAaronCine.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

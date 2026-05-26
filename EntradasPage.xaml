@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImbaquingoAaronCine.EntradasPage"
+             Title="Gestion de Entradas"
+             BackgroundColor="#FFFFFF">
+
+    <ScrollView Padding="15">
+        <VerticalStackLayout Spacing="20">
+
+            <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                <Label x:Name="PeliculaTituloLabel" FontSize="20" FontAttributes="Bold" TextColor="#007AFF" HorizontalTextAlignment="Center"/>
+                <Label x:Name="PeliculaInfoLabel" FontSize="13" TextColor="#8E8E93" HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <Border StrokeShape="RoundRectangle 12" Stroke="#E5E5EA" Padding="15" BackgroundColor="#FAFAFC">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Formulario de Entrada" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                    <Label Text="Id de Transaccion" />
+                    <Entry x:Name="txtIdEntrada" Keyboard="Numeric" Placeholder="Ingrese el Id de la entrada" />
+
+                    <Label Text="Cantidad de Asientos" />
+                    <Entry x:Name="txtCantidadAsientos" Keyboard="Numeric" Placeholder="Ej: 2" />
+
+                    <Label Text="Fecha y Hora de Funcion" />
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
+                        <DatePicker Grid.Column="0" x:Name="pickerFechaFuncion" />
+
+                        <TimePicker Grid.Column="1" x:Name="pickerHoraFuncion" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto" RowSpacing="10" ColumnSpacing="10" Margin="0,15,0,0">
+                        <Button Grid.Row="0" Grid.Column="0" x:Name="cmdCrearEntrada" Text="Crear" Clicked="cmdCrearEntrada_Clicked" BackgroundColor="#007AFF" TextColor="White" />
+                        <Button Grid.Row="0" Grid.Column="1" x:Name="cmdLeerEntrada" Text="Leer por ID" Clicked="cmdLeerEntrada_Clicked" BackgroundColor="#545456" TextColor="White" />
+                        <Button Grid.Row="1" Grid.Column="0" x:Name="cmdActualizarEntrada" Text="Actualizar" Clicked="cmdActualizarEntrada_Clicked" BackgroundColor="#34C759" TextColor="White" />
+                        <Button Grid.Row="1" Grid.Column="1" x:Name="cmdBorrarEntrada" Text="Borrar" Clicked="cmdBorrarEntrada_Clicked" BackgroundColor="#FF3B30" TextColor="White" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Historial de Ventas" FontSize="16" FontAttributes="Bold" TextColor="#1C1C1E"/>
+
+                <Grid ColumnDefinitions="*, Auto, *" BackgroundColor="#F2F2F7" Padding="10,8">
+                    <Label Grid.Column="0" Text="Fecha/Hora" FontAttributes="Bold" FontSize="12" TextColor="#48484A"/>
+                    <Label Grid.Column="1" Text="Asientos" FontAttributes="Bold" FontSize="12" TextColor="#48484A" HorizontalOptions="Center"/>
+                    <Label Grid.Column="2" Text="Total" FontAttributes="Bold" FontSize="12" TextColor="#48484A" HorizontalOptions="End"/>
+                </Grid>
+
+                <CollectionView x:Name="EntradasCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="*, Auto, *" Padding="10,10">
+                                <Label Grid.Column="0" Text="{Binding FechaFuncion}" FontSize="13" TextColor="#1C1C1E" VerticalOptions="Center"/>
+                                <Label Grid.Column="1" Text="{Binding CantidadAsientos}" FontSize="13" TextColor="#1C1C1E" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Grid.Column="2" Text="{Binding TotalPagado, StringFormat='${0:F2}'}" FontAttributes="Bold" TextColor="#34C759" HorizontalOptions="End" VerticalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

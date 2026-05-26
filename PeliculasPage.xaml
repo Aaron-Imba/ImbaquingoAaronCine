@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImbaquingoAaronCine.PeliculasPage"
+             Title="Gestion de Peliculas"
+             BackgroundColor="#F5F5F7">
+
+    <ScrollView Padding="15">
+        <VerticalStackLayout Spacing="20">
+
+            <Border StrokeShape="RoundRectangle 12" Stroke="#E5E5EA" Padding="15" BackgroundColor="White">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Formulario de Pelicula" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,0,0,10"/>
+
+                    <Label Text="Id" />
+                    <Entry x:Name="txtId" Placeholder="Ingrese el Id de la pelicula" Keyboard="Numeric" />
+
+                    <Label Text="Titulo de la Pelicula" />
+                    <Entry x:Name="txtTitulo" Placeholder="Ingrese el titulo" />
+
+                    <Label Text="Duracion" />
+                    <Entry x:Name="txtDuracion" Placeholder="Ingrese la duracion en minutos" Keyboard="Numeric" />
+
+                    <Label Text="Clasificacion" />
+                    <Entry x:Name="txtClasificacion" Placeholder="Ingrese la clasificacion (Ej: PG-13)" />
+
+                    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto" RowSpacing="10" ColumnSpacing="10" Margin="0,15,0,0">
+                        <Button Grid.Row="0" Grid.Column="0" x:Name="cmdCrear" Text="Crear" Clicked="cmdCrear_Clicked" BackgroundColor="#007AFF" TextColor="White" />
+                        <Button Grid.Row="0" Grid.Column="1" x:Name="cmdLeer" Text="Leer por ID" Clicked="cmdLeer_Clicked" BackgroundColor="#545456" TextColor="White" />
+                        <Button Grid.Row="1" Grid.Column="0" x:Name="cmdActualizar" Text="Actualizar" Clicked="cmdActualizar_Clicked" BackgroundColor="#34C759" TextColor="White" />
+                        <Button Grid.Row="1" Grid.Column="1" x:Name="cmdBorrar" Text="Borrar" Clicked="cmdBorrar_Clicked" BackgroundColor="#FF3B30" TextColor="White" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Peliculas en Cartelera" FontSize="16" FontAttributes="Bold" TextColor="#1C1C1E"/>
+
+                <CollectionView x:Name="PeliculasCollectionView" 
+                                SelectionMode="Single"
+                                SelectionChanged="OnPeliculaSeleccionada">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,4" Padding="12" StrokeShape="RoundRectangle 8" Stroke="#E5E5EA" BackgroundColor="White">
+                                <Grid ColumnDefinitions="*, Auto, Auto" ColumnSpacing="15" VerticalOptions="Center">
+                                    <Label Grid.Column="0" Text="{Binding Titulo}" FontSize="15" FontAttributes="Bold" TextColor="#1C1C1E" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding Duracion, StringFormat='{0} min'}" FontSize="13" TextColor="#8E8E93" VerticalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="{Binding Clasificacion}" FontSize="13" FontAttributes="Bold" TextColor="#FF3B30" VerticalOptions="Center"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
