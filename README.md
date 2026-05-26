@@ -16,17 +16,23 @@ A continuación, un pequeño recorrido visual por la aplicación:
 ### 1. Panel de Películas
 Administración general de la cartelera. Permite registrar la información básica, consultar mediante un ID único, modificar errores o retirar cintas.
 
-**Crear Registro:**
+**Crear Registro:**<br>
 ![Crear Película 1](Imagenes_Cines/peliculas_crear_1.png)
-![Crear Película 2](Imagenes_Cines/peliculas_crear_2.png)
+<br>![Crear Película 2](Imagenes_Cines/peliculas_crear_2.png)
 
-**Consultar por ID:**
+<br>
+
+**Consultar por ID:**<br>
 ![Leer Película](Imagenes_Cines/peliculas_leer.png)
 
-**Actualizar Información:**
+<br>
+
+**Actualizar Información:**<br>
 ![Actualizar Película](Imagenes_Cines/peliculas_actualizar.png)
 
-**Eliminar Registro:**
+<br>
+
+**Eliminar Registro:**<br>
 ![Eliminar Película](Imagenes_Cines/peliculas_eliminar.png)
 
 ---
@@ -34,15 +40,21 @@ Administración general de la cartelera. Permite registrar la información bási
 ### 2. Venta de Entradas
 Sección dedicada a las transacciones. Registra cuántos asientos se compran para una película en específico y mantiene un historial limpio.
 
-**Registrar Nueva Compra:**
+**Registrar Nueva Compra:**<br>
 ![Crear Entrada 1](Imagenes_Cines/entradas_crear_1.png)
-![Crear Entrada 2](Imagenes_Cines/entradas_crear_2.png)
+<br>![Crear Entrada 2](Imagenes_Cines/entradas_crear_2.png)
 
-**Revisar Boleto por ID:**
+<br>
+
+**Revisar Boleto por ID:**<br>
 ![Leer Entrada](Imagenes_Cines/entradas_leer.png)
 
-**Modificar Transacción:**
+<br>
+
+**Modificar Transacción:**<br>
 ![Actualizar Entrada](Imagenes_Cines/entradas_actualizar.png)
 
-**Borrar/Cancelar Venta:**
+<br>
+
+**Borrar/Cancelar Venta:**<br>
 ![Eliminar Entrada](Imagenes_Cines/entradas_eliminar.png)
